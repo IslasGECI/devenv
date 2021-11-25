@@ -14,8 +14,9 @@
     - [Neovim](https://github.com/neovim/neovim)
     - [Powerline-shell](https://github.com/b-ryan/powerline-shell)
     - [tmux](https://github.com/tmux/tmux)
+1. Agrega tu nombre y correo en Git: `git config --global --edit`
 
 ## En tu estación de trabajo:
 
-1. (Si no lo haz hecho, crea tu clave SSH: ssh-keygen)
+1. (Si no lo haz hecho, crea tu clave SSH: `ssh-keygen`)
 1. Agrega la clave SSH de tu estación de trabajo al servidor: `ssh-copy-id evaro@islasgeci.dev`

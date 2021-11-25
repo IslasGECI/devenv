@@ -8,10 +8,14 @@
 1. Crea tu clave SSH: `ssh-keygen`
 1. Agrega una nueva llave SSH a [GitHub](https://github.com/settings/keys/) y [Bitbucket](https://bitbucket.org/account/settings/ssh-keys/) copiando el contenido de `~/.ssh/id_rsa.pub`.
 1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)
+1. Instala:
+    - [exa](https://github.com/ogham/exa)
+    - [Neofetch](https://github.com/dylanaraps/neofetch)
+    - [Neovim](https://github.com/neovim/neovim)
+    - [Powerline-shell](https://github.com/b-ryan/powerline-shell)
+    - [tmux](https://github.com/tmux/tmux)
 
 ## En tu estación de trabajo:
 
 1. (Si no lo haz hecho, crea tu clave SSH: ssh-keygen)
-1. 1. Agrega la clave SSH de tu estación de trabajo al servidor: `ssh-copy-id evaro@islasgeci.dev`
-
-
+1. Agrega la clave SSH de tu estación de trabajo al servidor: `ssh-copy-id evaro@islasgeci.dev`

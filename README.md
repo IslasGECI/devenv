@@ -1,4 +1,15 @@
+# Crea un entorno para desarrollo en un contenedor
+
+Ejecuta:
+
+```shell
+docker pull evaristor/devenv:latest
+docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir evaristor/devenv:latest bash
+```
+
 # Crea un entorno para desarrollo en el servidor
+
+> TODO: Mueve esta sección al _playbook_ que se encuentra en [Workstation setup via Ansible](https://github.com/IslasGECI/workstation_setup)
 
 ## En el servidor:
 
@@ -21,7 +32,7 @@
 1. (Si no lo haz hecho, crea tu clave SSH: `ssh-keygen`)
 1. Agrega la clave SSH de tu estación de trabajo al servidor: `ssh-copy-id evaro@islasgeci.dev`
 
-## Related repos
+# Related repos
 
 - [Development environment container](https://github.com/devarops/devenv)
 - [Dotfiles](https://github.com/devarops/dotfiles)

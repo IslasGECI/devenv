@@ -20,3 +20,9 @@
 
 1. (Si no lo haz hecho, crea tu clave SSH: `ssh-keygen`)
 1. Agrega la clave SSH de tu estación de trabajo al servidor: `ssh-copy-id evaro@islasgeci.dev`
+
+## Related repos
+
+- [Development environment container](https://github.com/devarops/devenv)
+- [Dotfiles](https://github.com/devarops/dotfiles)
+- [Workstation setup via Ansible](https://github.com/IslasGECI/workstation_setup)

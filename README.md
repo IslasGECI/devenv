@@ -1,17 +1,23 @@
-# Crea un entorno para desarrollo en un contenedor
+# Configura tu entorno para desarrollo
 
-Ejecuta:
+## En tu estación de trabajo
 
-```shell
-docker pull evaristor/devenv:latest
-docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir evaristor/devenv:latest bash
-```
+1. Crea tu clave SSH con `ssh-keygen` y agrega o actualiza la bóbeda secreta de tu estación de trabajo
+1. Instala Ansible en tu estación de trabajo
+1. Create Droplet
+1. Copy IP
+1. Crea archivo `/etc/ansible/hosts`[^ansible_hosts]
+1. Ejecuta `make` en la raiz del repo [`development_environment_container`](https://github.com/devarops/devenv)
 
-# Crea un entorno para desarrollo en el servidor
+[^ansible_hosts]: El contenido del archivo `/etc/ansible/hosts` es el siguiente:
+    ```
+    [development]
+    <IP que copiaste en el segundo paso> ansible_user=root
+    ```
+
+## En el servidor de desarrollo
 
 > TODO: Mueve esta sección al _playbook_ que se encuentra en [Workstation setup via Ansible](https://github.com/IslasGECI/workstation_setup)
-
-## En el servidor:
 
 1. Crear cuenta de usuario: `sudo adduser evaro`
 1. Agrega usuaro a los grupos _docker_ y _sudo_: `sudo usermod --append --groups docker,sudo evaro`
@@ -27,14 +33,17 @@ docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir evari
     - [tmux](https://github.com/tmux/tmux)
 1. Agrega tu nombre y correo en Git: `git config --global --edit`
 
-## En tu estación de trabajo:
+# Crea un entorno para desarrollo en un contenedor
 
-1. (Si no lo haz hecho, crea tu clave SSH: `ssh-keygen`)
-1. Agrega la clave SSH de tu estación de trabajo al servidor: `ssh-copy-id evaro@islasgeci.dev`
+Ejecuta:
+
+```shell
+docker pull evaristor/devenv:latest
+docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir evaristor/devenv:latest bash
+```
 
 # Related repos
 
 - [Development environment container](https://github.com/devarops/devenv)
 - [Dotfiles](https://github.com/devarops/dotfiles)
 - [Development server setup via Ansible](https://github.com/IslasGECI/development_server_setup)
-

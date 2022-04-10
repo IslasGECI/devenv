@@ -23,7 +23,6 @@
 
 > TODO: Mueve esta sección al _playbook_ que se encuentra en [Workstation setup via Ansible](https://github.com/IslasGECI/workstation_setup)
 
-1. Instala OpenSSH: `apt install openssh-client`
 1. Crea tu clave SSH: `ssh-keygen`
 1. Agrega una nueva llave SSH a [GitHub](https://github.com/settings/keys/) y [Bitbucket](https://bitbucket.org/account/settings/ssh-keys/) copiando el contenido de `~/.ssh/id_rsa.pub`.
 1. Instala:

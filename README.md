@@ -8,7 +8,6 @@
 1. Copy IP
 1. Crea archivo `/etc/ansible/hosts`[^ansible_hosts]
 1. Ejecuta `make` en la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup)
-1. Instala [`geci-testmake`](https://github.com/IslasGECI/testmake) en el servidor (TODO: Mover esto al _playbook_ de Ansible en [`development_server_setup`](https://github.com/IslasGECI/development_server_setup))
 
 [^ansible_hosts]: El contenido del archivo `/etc/ansible/hosts` es el siguiente:
     ```
@@ -23,15 +22,17 @@
 1. Crear cuenta de usuario: `sudo adduser evaro`
 1. Agrega usuaro a los grupos _docker_ y _sudo_: `sudo usermod --append --groups docker,sudo evaro`
 1. Cambia de usario: `su - evaro`
+1. Instala OpenSSH: `apt install openssh-client`
 1. Crea tu clave SSH: `ssh-keygen`
 1. Agrega una nueva llave SSH a [GitHub](https://github.com/settings/keys/) y [Bitbucket](https://bitbucket.org/account/settings/ssh-keys/) copiando el contenido de `~/.ssh/id_rsa.pub`.
-1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)
 1. Instala:
     - [exa](https://github.com/ogham/exa)
+    - [geci-testmake](https://github.com/IslasGECI/testmake)
     - [Neofetch](https://github.com/dylanaraps/neofetch)
     - [Neovim](https://github.com/neovim/neovim)
     - [Powerline-shell](https://github.com/b-ryan/powerline-shell)
     - [tmux](https://github.com/tmux/tmux)
+1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)
 1. Agrega tu nombre y correo en Git: `git config --global --edit`
 
 # Crea un entorno para desarrollo en un contenedor

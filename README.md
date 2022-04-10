@@ -2,10 +2,10 @@
 
 ## En tu estación de trabajo
 
-> NOTA: En realidad esto no tiene que ser en tu estación de trabajo, podría ser en otra estación de trabajo o servidor.
+> NOTA: En realidad esto no tiene que ser en tu estación de trabajo, podría ser desde otra estación de trabajo o servidor.
 
 1. Crea tu clave SSH con `ssh-keygen` y agrega o actualiza la bóbeda secreta de tu estación de trabajo
-1. Instala Ansible en tu estación de trabajo
+1. Instala Ansible y Make
 1. Create Droplet
 1. Copy IP
 1. Crea archivo `/etc/ansible/hosts`[^ansible_hosts]

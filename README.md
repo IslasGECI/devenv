@@ -4,23 +4,19 @@
 
 > NOTA: En realidad esto no tiene que ser en tu estación de trabajo, podría ser desde otra estación de trabajo o servidor.
 
-1. Crea tu clave SSH con `ssh-keygen` y agrega o actualiza la bóbeda secreta de tu estación de trabajo
-1. Instala Ansible y Make
 1. Create Droplet
 1. Copy IP
+1. Agrega o actualiza la bóbeda secreta de tu estación de trabajo
+1. Crea tu clave SSH con `ssh-keygen`
+1. Copia tu clave SSH con `ssh-copy-id root@<IP que copiaste en el segundo paso>`
+1. Instala Ansible y Make: `sudo apt update && sudo apt install --yes ansible make`
 1. Crea archivo `/etc/ansible/hosts`[^ansible_hosts]
-1. Edita el archivo `/etc/hosts`[^host_aliases]
-3. Ejecuta `make` en la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup)
+1. En la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup), ejecuta: `ANSIBLE_HOST_KEY_CHECKING=False && make`
 
 [^ansible_hosts]: El contenido del archivo `/etc/ansible/hosts` es el siguiente:
     ```
     [development]
     <IP que copiaste en el segundo paso> ansible_user=root
-    ```
-
-[^host_aliases]: Al archivo `/etc/hosts` agrega la línea siguiente:
-    ```
-    <IP que copiaste en el segundo paso>  development
     ```
 
 ## En el servidor de desarrollo

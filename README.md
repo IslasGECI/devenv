@@ -8,6 +8,7 @@
 1. Copy IP
 1. Crea archivo `/etc/ansible/hosts`[^ansible_hosts]
 1. Ejecuta `make` en la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup)
+1. Instala [`geci-testmake`](https://github.com/IslasGECI/testmake) en el servidor (TODO: Mover esto al _playbook_ de Ansible en [`development_server_setup`](https://github.com/IslasGECI/development_server_setup))
 
 [^ansible_hosts]: El contenido del archivo `/etc/ansible/hosts` es el siguiente:
     ```

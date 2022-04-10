@@ -7,12 +7,18 @@
 1. Create Droplet
 1. Copy IP
 1. Crea archivo `/etc/ansible/hosts`[^ansible_hosts]
-1. Ejecuta `make` en la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup)
+1. Edita el archivo `/etc/hosts`[^host_aliases]
+3. Ejecuta `make` en la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup)
 
 [^ansible_hosts]: El contenido del archivo `/etc/ansible/hosts` es el siguiente:
     ```
     [development]
     <IP que copiaste en el segundo paso> ansible_user=root
+    ```
+
+[^host_aliases]: Al archivo `/etc/hosts` agrega la línea siguiente:
+    ```
+    <IP que copiaste en el segundo paso>  development
     ```
 
 ## En el servidor de desarrollo

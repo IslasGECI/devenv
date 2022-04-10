@@ -25,9 +25,6 @@
 
 > TODO: Mueve esta sección al _playbook_ que se encuentra en [Workstation setup via Ansible](https://github.com/IslasGECI/workstation_setup)
 
-1. Crear cuenta de usuario: `sudo adduser evaro`
-1. Agrega usuaro a los grupos _docker_ y _sudo_: `sudo usermod --append --groups docker,sudo evaro`
-1. Cambia de usario: `su - evaro`
 1. Instala OpenSSH: `apt install openssh-client`
 1. Crea tu clave SSH: `ssh-keygen`
 1. Agrega una nueva llave SSH a [GitHub](https://github.com/settings/keys/) y [Bitbucket](https://bitbucket.org/account/settings/ssh-keys/) copiando el contenido de `~/.ssh/id_rsa.pub`.

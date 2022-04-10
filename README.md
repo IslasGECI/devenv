@@ -7,7 +7,7 @@
 1. Create Droplet
 1. Copy IP
 1. Crea archivo `/etc/ansible/hosts`[^ansible_hosts]
-1. Ejecuta `make` en la raiz del repo [`development_environment_container`](https://github.com/devarops/devenv)
+1. Ejecuta `make` en la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup)
 
 [^ansible_hosts]: El contenido del archivo `/etc/ansible/hosts` es el siguiente:
     ```

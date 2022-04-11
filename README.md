@@ -28,10 +28,7 @@
 1. Instala:
     - [exa](https://github.com/ogham/exa)
     - [geci-testmake](https://github.com/IslasGECI/testmake)
-    - [Neofetch](https://github.com/dylanaraps/neofetch)
-    - [Neovim](https://github.com/neovim/neovim)
     - [Powerline-shell](https://github.com/b-ryan/powerline-shell)
-    - [tmux](https://github.com/tmux/tmux)
 1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)
 1. Agrega tu nombre y correo en Git: `git config --global --edit`
 

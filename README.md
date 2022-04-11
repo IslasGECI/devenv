@@ -28,7 +28,6 @@
 1. Instala:
     - [exa](https://github.com/ogham/exa)
     - [geci-testmake](https://github.com/IslasGECI/testmake)
-    - [Powerline-shell](https://github.com/b-ryan/powerline-shell)
 1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)
 1. Agrega tu nombre y correo en Git: `git config --global --edit`
 

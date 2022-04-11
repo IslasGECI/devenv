@@ -2,7 +2,7 @@
 
 ## En tu estación de trabajo
 
-> NOTA: En realidad esto no tiene que ser en tu estación de trabajo, podría ser desde otra estación de trabajo o servidor.
+> NOTA: En realidad esto no tiene que ser en tu estación de trabajo, podría ser desde otra estación de trabajo o servidor mediante Terraform.
 
 1. Agrega o actualiza la bóbeda secreta de tu estación de trabajo
 1. Crea Droplet

@@ -21,7 +21,7 @@
 
 ## En el servidor de desarrollo
 
-> TODO: Mueve esta sección al _playbook_ que se encuentra en [Workstation setup via Ansible](https://github.com/IslasGECI/workstation_setup)
+> TODO: Mueve esta sección al _playbook_ que se encuentra en [Development server setup via Ansible](https://github.com/IslasGECI/development_server_setup)
 
 1. Crea tu clave SSH: `ssh-keygen`
 1. Agrega una nueva llave SSH a [GitHub](https://github.com/settings/keys/) y [Bitbucket](https://bitbucket.org/account/settings/ssh-keys/) copiando el contenido de `~/.ssh/id_rsa.pub`.

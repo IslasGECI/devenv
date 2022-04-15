@@ -45,6 +45,9 @@ RUN pip install \
 RUN npm install --global \
     pyright
 
+# Instala paquetes de R
+RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
+
 # Instala ShellSpec
 RUN curl \
     --fail \

@@ -15,6 +15,7 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     exa \
     git \
     libcurl4-openssl-dev \
+    libxml2-dev \
     neofetch \
     neovim \
     npm \

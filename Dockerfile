@@ -14,8 +14,10 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     curl \
     exa \
     git \
+    libcurl4-openssl-dev \
     neofetch \
     neovim \
+    npm \
     pip \
     ripgrep \
     tmux \
@@ -32,9 +34,12 @@ RUN pip install \
     mutmut \
     powerline-shell \
     pylint \
-    pyright \
     pytest \
     rope
+
+# Instala modulos con pip
+RUN npm install --global \
+    pyright
 
 # Instala ShellSpec
 RUN curl \
@@ -50,4 +55,3 @@ RUN mkdir --parents ${HOME}/repos && \
     git clone --bare https://github.com/devarops/dotfiles.git ${HOME}/repos/dotfiles.git && \
     git --git-dir=${HOME}/repos/dotfiles.git --work-tree=${HOME} checkout && \
     git --git-dir=${HOME}/repos/dotfiles.git --work-tree=${HOME} config --local status.showUntrackedFiles no
-

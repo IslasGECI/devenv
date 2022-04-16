@@ -58,7 +58,7 @@ RUN curl \
 RUN shellspec --init
 
 # Importa archivos de configuración
-RUN mkdir --parents ${HOME}/repos && \
-    git clone --bare https://github.com/devarops/dotfiles.git ${HOME}/repos/dotfiles.git && \
-    git --git-dir=${HOME}/repos/dotfiles.git --work-tree=${HOME} checkout && \
-    git --git-dir=${HOME}/repos/dotfiles.git --work-tree=${HOME} config --local status.showUntrackedFiles no
+RUN mkdir --parents ${HOME}/repositorios && \
+    git clone --bare https://github.com/devarops/dotfiles.git ${HOME}/repositorios/dotfiles.git && \
+    git --git-dir=${HOME}/repositorios/dotfiles.git --work-tree=${HOME} checkout && \
+    git --git-dir=${HOME}/repositorios/dotfiles.git --work-tree=${HOME} config --local status.showUntrackedFiles no

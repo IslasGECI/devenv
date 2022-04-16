@@ -19,7 +19,6 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     libssl-dev \
     libxml2-dev \
     neofetch \
-    neovim \
     npm \
     pip \
     r-base \
@@ -56,6 +55,12 @@ RUN curl \
     --silent \
     | sh -s -- --yes
 RUN shellspec --init
+
+# Instala Neovim
+RUN wget --directory-prefix=$HOME https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && \
+    chmod u+x $HOME/nvim.appimage && \
+    $HOME/nvim.appimage --appimage-extract && \
+    ln --symbolic $HOME/squashfs-root/usr/bin/nvim /usr/bin/nvim
 
 # Importa archivos de configuración
 RUN mkdir --parents ${HOME}/repositorios && \

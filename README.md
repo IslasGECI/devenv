@@ -1,10 +1,20 @@
 # Configura tu entorno para desarrollo
 
+## Autenticación mediante SSH
+
+1. En tu estación de trabajo crea tu clave SSH con: `ssh-keygen`
+1. Agrega la clave SSH pública[^ssh_pub] de tu estación de trabajo a:
+    - [Bitbucket](https://bitbucket.org/account/settings/ssh-keys/),
+    - [DigitalOcean](https://cloud.digitalocean.com/account/security) y
+    - [GitHub](https://github.com/settings/keys/)
+
+[^ssh_pub]: Copia el contenido del archivo `~/.ssh/id_rsa.pub` de tu estación de trabajo y pégalo en las aplicaciones indicadas
+
 ## En DigitalOcean
 
-1. [Agrega](https://cloud.digitalocean.com/account/security) a DigitalOcean la clave SSH pública de tu estación de trabajo
-    - Antes, en tu estación de trabajo crea tu clave SSH con: `ssh-keygen`
 1. [Crea](https://cloud.digitalocean.com/droplets/new) Droplet
+    - Selecciona la región correspondiente a la IP flotante (actualmente es San Francisco 3: SF3)
+    - Selecciona la clave SSH de tu estación de trabajo como medio de autenticación
 1. [Reasigna](https://cloud.digitalocean.com/networking/floating_ips) la IP flotante correspondiente a la Droplet nueva
 
 ## En tu estación de trabajo

@@ -44,7 +44,6 @@
 
 1. Entra mediante: `ssh root@islasgeci.dev`
 1. Instala:
-    - [exa](https://github.com/ogham/exa)
     - [geci-testmake](https://github.com/IslasGECI/testmake)
     - [Neovim](https://github.com/neovim/neovim/releases/tag/stable)[^install_neovim]
 1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)

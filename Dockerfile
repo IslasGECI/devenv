@@ -31,7 +31,7 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
 RUN ln --symbolic /usr/bin/python3 /usr/bin/python
 
 # Instala modulos con pip
-RUN pip install \
+RUN pip install --upgrade pip && pip install \
     black \
     flake8 \
     ipython \

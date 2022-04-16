@@ -33,7 +33,7 @@ test_language_server_protocol:
 	pyright --version | grep "pyright 1"
 	python --version | grep "Python 3.10"
 	R --version | grep "R version 4.1"
-	Rscript -e "packageVersion('languageserver')" | grep "0."
+	Rscript -e "packageVersion('languageserver')" | grep "'0."
 
 test_os_packages:
 	ctags --version | grep "Universal Ctags 5"

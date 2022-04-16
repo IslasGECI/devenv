@@ -30,8 +30,17 @@
 1. Instala:
     - [exa](https://github.com/ogham/exa)
     - [geci-testmake](https://github.com/IslasGECI/testmake)
+    - [Neovim](https://github.com/neovim/neovim/releases/tag/stable)[^install_neovim]
 1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)
 1. Agrega tu nombre y correo en Git: `git config --global --edit`
+
+[^install_neovim]: Para instalar Neovim ejecuta:
+    ```shell
+    wget --directory-prefix=$HOME https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+    chmod u+x $HOME/nvim.appimage
+    $HOME/nvim.appimage --appimage-extract
+    ln --symbolic $HOME/squashfs-root/usr/bin/nvim /usr/bin/nvim 
+    ```
 
 # Crea un entorno para desarrollo en un contenedor
 

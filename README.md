@@ -21,6 +21,7 @@
 
 > NOTA: En realidad esto no tiene que ser en tu estación de trabajo, podría ser desde otra estación de trabajo o servidor mediante Terraform.
 
+1. Entra mediante: `ssh root@islasgeci.dev`
 1. Instala Ansible y Make: `sudo apt update && sudo apt install --yes ansible make`
 1. Agrega o actualiza la bóbeda secreta de tu estación de trabajo
 1. Crea el archivo `~/.ssh/config`[^ssh_config]

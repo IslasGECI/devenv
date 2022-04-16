@@ -46,6 +46,7 @@ test_os_packages:
 	rg --version | grep "ripgrep 13"
 	shellspec --version | grep "^0"
 	tmux -V | grep "tmux 3"
+	wget --version | grep "Wget 1"
 
 test_os_version:
 	cat /etc/os-release | grep "Ubuntu Jammy Jellyfish"

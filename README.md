@@ -3,6 +3,7 @@
 ## En DigitalOcean
 
 1. Crea Droplet
+1. Reassing floating IP to Droplet
 
 ## En tu estación de trabajo
 

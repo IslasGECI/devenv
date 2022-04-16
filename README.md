@@ -36,8 +36,8 @@
 Ejecuta:
 
 ```shell
-docker pull evaristor/devenv:latest
-docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir evaristor/devenv:latest bash
+docker pull islasgeci/devenv:latest
+docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir islasgeci/devenv:latest bash
 ```
 
 # Related repos

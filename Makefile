@@ -39,6 +39,7 @@ test_os_packages:
 	ctags --version | grep "Universal Ctags 5"
 	curl --version | grep "curl 7"
 	exa --version | grep "v0"
+	fdfind --version | grep "fd 8"
 	git --version | grep "version 2"
 	neofetch --version | grep "Neofetch 7"
 	nvim --version | grep "NVIM v0"

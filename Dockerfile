@@ -14,6 +14,7 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     build-essential \
     curl \
     exa \
+    fd-find \
     git \
     libcurl4-openssl-dev \
     libssl-dev \

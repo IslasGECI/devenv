@@ -21,10 +21,10 @@
 
 > NOTA: En realidad esto no tiene que ser en tu estación de trabajo, podría ser desde otra estación de trabajo o servidor mediante Terraform.
 
+1. Instala Ansible y Make: `sudo apt update && sudo apt install --yes ansible make`
 1. Agrega o actualiza la bóbeda secreta de tu estación de trabajo
 1. Crea el archivo `~/.ssh/config`[^ssh_config]
 1. Crea el archivo `/etc/ansible/hosts`[^ansible_hosts]
-1. Instala Ansible y Make: `sudo apt update && sudo apt install --yes ansible make`
 1. En la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup), ejecuta: `ANSIBLE_HOST_KEY_CHECKING=False && make`
 
 [^ssh_config]: El contenido del archivo `~/.ssh/config` es el siguiente:

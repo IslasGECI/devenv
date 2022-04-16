@@ -21,7 +21,6 @@
 
 > NOTA: En realidad esto no tiene que ser en tu estación de trabajo, podría ser desde otra estación de trabajo o servidor mediante Terraform.
 
-1. Entra mediante: `ssh root@islasgeci.dev`
 1. Instala Ansible y Make: `sudo apt update && sudo apt install --yes ansible make`
 1. Agrega o actualiza la bóbeda secreta de tu estación de trabajo
 1. Crea el archivo `~/.ssh/config`[^ssh_config]
@@ -44,6 +43,7 @@
 
 > TODO: Mueve esta sección al _playbook_ que se encuentra en [Development server setup via Ansible](https://github.com/IslasGECI/development_server_setup)
 
+1. Entra mediante: `ssh root@islasgeci.dev`
 1. Instala:
     - [exa](https://github.com/ogham/exa)
     - [geci-testmake](https://github.com/IslasGECI/testmake)

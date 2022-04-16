@@ -39,7 +39,8 @@ RUN pip install --upgrade pip && pip install \
     powerline-shell \
     pylint \
     pytest \
-    rope
+    rope \
+    wget
 
 # Instala modulos con pip
 RUN npm install --global \
@@ -58,7 +59,7 @@ RUN curl \
 RUN shellspec --init
 
 # Instala Neovim
-RUN curl --output $HOME/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && \
+RUN wget --directory-prefix=$HOME https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && \
     chmod u+x $HOME/nvim.appimage && \
     $HOME/nvim.appimage --appimage-extract && \
     ln --symbolic $HOME/squashfs-root/usr/bin/nvim /usr/bin/nvim

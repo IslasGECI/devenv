@@ -32,6 +32,7 @@ RUN ln --symbolic /usr/bin/python3 /usr/bin/python
 # Instala modulos con pip
 RUN pip install --upgrade pip && pip install \
     black \
+    dunk \
     flake8 \
     ipython \
     mutmut \

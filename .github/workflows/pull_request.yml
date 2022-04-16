@@ -1,0 +1,13 @@
+name: Check build
+on: pull_request
+
+jobs:
+  actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copia repositorio
+      uses: actions/checkout@v2
+    - name: Construye imagen con entorno de desarrollo
+      run: docker build --tag islasgeci/devenv .
+    - name: Corre las pruebas
+      run: docker run --volume ${PWD}:/workdir islasgeci/devenv make tests

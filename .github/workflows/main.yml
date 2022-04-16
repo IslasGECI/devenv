@@ -1,0 +1,27 @@
+name: Stable
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  actions:
+    runs-on: ubuntu-latest
+    env:
+      github_sha: ${{ github.sha }}
+    steps:
+    - name: Copia repositorio
+      uses: actions/checkout@v2
+    - name: Construye imagen con entorno de desarrollo
+      run: docker build --tag islasgeci/devenv:stable --tag islasgeci/devenv:${github_sha:0:4} .
+    - name: Ejecuta las pruebas de la imagen
+      run: docker run --volume ${PWD}:/workdir islasgeci/devenv:stable make
+    - name: Docker log-in
+      env:
+        docker_username: ${{ secrets.docker_username }}
+        docker_password: ${{ secrets.docker_password }}
+      run: echo "${docker_password}" | docker login -u "${docker_username}" --password-stdin
+    - name: Sube stable a Docker Hub
+      run: docker push islasgeci/devenv:stable
+    - name: Sube sha a Docker Hub
+      run: docker push islasgeci/devenv:${github_sha:0:4}

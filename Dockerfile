@@ -25,7 +25,8 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     r-base \
     ripgrep \
     tmux \
-    universal-ctags
+    universal-ctags \
+    wget \
 
 # Use Python 3 as the default version of Python
 RUN ln --symbolic /usr/bin/python3 /usr/bin/python
@@ -41,7 +42,6 @@ RUN pip install --upgrade pip && pip install \
     pylint \
     pytest \
     rope \
-    wget
 
 # Instala modulos con pip
 RUN npm install --global \

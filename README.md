@@ -2,10 +2,10 @@
 
 ## En DigitalOcean
 
-1. Agrega a DigitalOcean la clave SSH pública de tu estación de trabajo
+1. [Agrega](https://cloud.digitalocean.com/account/security) a DigitalOcean la clave SSH pública de tu estación de trabajo
     - Antes, en tu estación de trabajo crea tu clave SSH con: `ssh-keygen`
-1. Crea Droplet
-1. Reasigna la IP flotante correspondiente a la Droplet nueva
+1. [Crea](https://cloud.digitalocean.com/droplets/new) Droplet
+1. [Reasigna](https://cloud.digitalocean.com/networking/floating_ips) la IP flotante correspondiente a la Droplet nueva
 
 ## En tu estación de trabajo
 

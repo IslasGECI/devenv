@@ -29,7 +29,7 @@
 
 [^ssh_config]: En tu estación de trabajo ejecuta:
     ```shell
-    scp /root/.ssh/id_rsa* root@islasgeci.dev:/root/.ssh/
+    scp ~/.ssh/id_rsa* root@islasgeci.dev:/root/.ssh/
     ```
 
 [^ansible_hosts]: El contenido del archivo `/etc/ansible/hosts` es el siguiente:

@@ -44,7 +44,7 @@
 
 1. Entra mediante: `ssh root@islasgeci.dev`
 1. Instala [geci-testmake](https://github.com/IslasGECI/testmake)
-1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)
+1. Instala los [archivos de configuración personal](https://github.com/devarops/dotfiles/blob/develop/README.md)
 1. Agrega tu nombre y correo en Git: `git config --global --edit`
 
 # Crea un entorno para desarrollo en un contenedor

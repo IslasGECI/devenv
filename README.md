@@ -43,19 +43,9 @@
 > TODO: Mueve esta sección al _playbook_ que se encuentra en [Development server setup via Ansible](https://github.com/IslasGECI/development_server_setup)
 
 1. Entra mediante: `ssh root@islasgeci.dev`
-1. Instala:
-    - [geci-testmake](https://github.com/IslasGECI/testmake)
-    - [Neovim](https://github.com/neovim/neovim/releases/tag/stable)[^install_neovim]
+1. Instala [geci-testmake](https://github.com/IslasGECI/testmake)
 1. Sigue [estas instrucciones](https://github.com/devarops/dotfiles/blob/develop/README.md)
 1. Agrega tu nombre y correo en Git: `git config --global --edit`
-
-[^install_neovim]: Para instalar Neovim ejecuta:
-    ```shell
-    wget --directory-prefix=$HOME https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-    chmod u+x $HOME/nvim.appimage
-    $HOME/nvim.appimage --appimage-extract
-    ln --symbolic $HOME/squashfs-root/usr/bin/nvim /usr/bin/nvim 
-    ```
 
 # Crea un entorno para desarrollo en un contenedor
 

@@ -29,7 +29,7 @@
 
 [^ssh_config]: En tu estación de trabajo ejecuta:
     ```shell
-    ssh-keygen -f "~/.ssh/known_hosts" -R "islasgeci.dev"
+    ssh-keygen -f "${HOME}/.ssh/known_hosts" -R "islasgeci.dev"
     scp ~/.ssh/id_rsa* root@islasgeci.dev:/root/.ssh/
     ```
 

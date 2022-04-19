@@ -15,7 +15,9 @@
 1. [Crea una Droplet](https://cloud.digitalocean.com/droplets/new)
     - Selecciona la región correspondiente a la IP flotante (actualmente es San Francisco 3: SF3)
     - Selecciona las claves SSH de todos los miembros del equipo como medio de autenticación
-    - En el campo _Choose a hostname_, escribe `devserver`
+    - En el campo _Choose a hostname_, escribe `devserver`: 
+![image](https://user-images.githubusercontent.com/35377740/164117896-95a0edb4-c59a-42cc-855f-0745d591321c.png)
+
 1. [Reasigna la IP](https://cloud.digitalocean.com/networking/floating_ips) flotante correspondiente a la Droplet nueva
 
 ## En tu estación de trabajo

@@ -1,4 +1,4 @@
-# Personal Development Environment (PDE) en un contenedor
+# Personal Development Environment (PDE)
 
 Ejecuta:
 

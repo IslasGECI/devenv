@@ -30,16 +30,16 @@
 1. Crea el archivo `/etc/ansible/hosts`[^ansible_hosts]
 1. En la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup) corre el _playbook_[^playbook]
 
-[^playbook]: En tu estación de trabajo ejecuta:
-    ```shell
-    ssh-keygen -f "${HOME}/.ssh/known_hosts" -R "islasgeci.dev"
-    ANSIBLE_HOST_KEY_CHECKING=False && make
-    ```
-
 [^ansible_hosts]: El contenido del archivo `/etc/ansible/hosts` es el siguiente:
     ```
     [development]
     islasgeci.dev ansible_user=root
+    ```
+
+[^playbook]: En la raiz del repo [`development_server_setup`](https://github.com/IslasGECI/development_server_setup) ejecuta:
+    ```shell
+    ssh-keygen -f "${HOME}/.ssh/known_hosts" -R "islasgeci.dev"
+    ANSIBLE_HOST_KEY_CHECKING=False && make
     ```
 
 ## En el servidor de desarrollo
@@ -50,6 +50,8 @@
 1. Instala [geci-testmake](https://github.com/IslasGECI/testmake)
 1. Instala los [archivos de configuración personal](https://github.com/devarops/dotfiles/blob/develop/README.md)
 1. Agrega tu nombre y correo en Git: `git config --global --edit`
+
+---
 
 # Crea un entorno para desarrollo en un contenedor
 

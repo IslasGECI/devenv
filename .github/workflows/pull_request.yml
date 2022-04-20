@@ -8,6 +8,6 @@ jobs:
     - name: Copia repositorio
       uses: actions/checkout@v2
     - name: Construye imagen con entorno de desarrollo
-      run: docker build --tag islasgeci/devenv .
+      run: docker build --tag evaristor/pde .
     - name: Corre las pruebas
-      run: docker run --volume ${PWD}:/workdir islasgeci/devenv make tests
+      run: docker run --volume ${PWD}:/workdir evaristor/pde make tests

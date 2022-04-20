@@ -58,8 +58,8 @@
 Ejecuta:
 
 ```shell
-docker pull islasgeci/devenv:latest
-docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir islasgeci/devenv:latest bash
+docker pull evaristor/pde:latest
+docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir evaristor/pde:latest bash
 ```
 
 # Related repos

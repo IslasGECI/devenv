@@ -63,8 +63,7 @@ RUN shellspec --init
 RUN cd $HOME && \
     wget --directory-prefix=$HOME https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && \
     chmod u+x $HOME/nvim.appimage && \
-    $HOME/nvim.appimage --appimage-extract && \
-    ln --symbolic $HOME/squashfs-root/usr/bin/nvim /usr/bin/nvim
+    $HOME/nvim.appimage --appimage-extract
 
 # Importa archivos de configuración
 RUN mkdir --parents ${HOME}/repositorios && \

@@ -36,6 +36,7 @@ test_language_server_protocol:
 	Rscript -e "packageVersion('languageserver')" | grep "'0."
 
 test_os_packages:
+	/root/go/bin/lazygit --version | grep "unversioned"
 	ctags --version | grep "Universal Ctags 5"
 	curl --version | grep "curl 7"
 	exa --version | grep "v0"

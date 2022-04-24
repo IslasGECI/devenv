@@ -16,6 +16,7 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     exa \
     fd-find \
     git \
+    golang-go \
     libcurl4-openssl-dev \
     libssl-dev \
     libxml2-dev \
@@ -43,14 +44,15 @@ RUN pip install --upgrade pip && pip install \
     pytest \
     rope
 
-# Instala modulos con pip
+# Instala modulos con npm
 RUN npm install --global \
     pyright
 
 # Instala paquetes de R
 RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
 
-# Instala ShellSpec
+# Inslalaciones ad-hoc:
+## Instala ShellSpec
 RUN curl \
     --fail \
     --location https://git.io/shellspec \
@@ -59,11 +61,14 @@ RUN curl \
     | sh -s -- --yes
 RUN shellspec --init
 
-# Instala Neovim
+## Instala Neovim
 RUN cd $HOME && \
     wget --directory-prefix=$HOME https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && \
     chmod u+x $HOME/nvim.appimage && \
     $HOME/nvim.appimage --appimage-extract
+
+## Instala lazygit
+RUN go install github.com/jesseduffield/lazygit@latest
 
 # Importa archivos de configuración
 RUN mkdir --parents ${HOME}/repositorios && \

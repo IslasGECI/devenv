@@ -4,7 +4,7 @@ Ejecuta:
 
 ```shell
 docker pull evaristor/pde:latest
-docker run --interactive --name devenv --rm --tty --volume ${PWD}:/workdir evaristor/pde:latest bash
+docker run --interactive --name pde --rm --tty --volume ${PWD}:/workdir evaristor/pde:latest bash
 ```
 
 # Related repos

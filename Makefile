@@ -14,8 +14,9 @@ check:
 	shellcheck src/*
 
 install:
-	src/install_neovim.sh
 	src/install_lazygit.sh
+	src/install_neovim.sh
+	src/install_shellspec.sh
 
 test_external_python_modules:
 	pip freeze | grep black==22
@@ -40,8 +41,9 @@ test_language_server_protocol:
 	Rscript -e "packageVersion('languageserver')" | grep "0."
 
 test_os_packages:
-	/root/go/bin/lazygit --version | grep "unversioned"
-	/root/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.7"
+	$$HOME/.local/lib/shellspec/bin/shellspec --version | grep "^0"
+	$$HOME/go/bin/lazygit --version | grep "unversioned"
+	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.7"
 	ctags --version | grep "Universal Ctags 5"
 	curl --version | grep "curl 7"
 	exa --version | grep "v0"
@@ -52,7 +54,6 @@ test_os_packages:
 	pip --version | grep "pip 22"
 	rg --version | grep "ripgrep 13"
 	shellcheck --version | grep "version: 0"
-	shellspec --version | grep "^0"
 	tmux -V | grep "tmux 3"
 	wget --version | grep "Wget 1"
 

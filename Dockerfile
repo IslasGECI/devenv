@@ -50,20 +50,12 @@ RUN npm install --global \
 RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
 
 # Inslalaciones ad-hoc:
-## Instala ShellSpec
-RUN curl \
-    --fail \
-    --location https://git.io/shellspec \
-    --show-error \
-    --silent \
-    | sh -s -- --yes
-RUN shellspec --init
-
-## Instala Neovim
-RUN /install_scripts/install_neovim.sh
-
 ## Instala lazygit
 RUN /install_scripts/install_lazygit.sh
+## Instala Neovim
+RUN /install_scripts/install_neovim.sh
+## Instala ShellSpec
+RUN /install_scripts/install_shellspec.sh
 
 # Importa archivos de configuración
 RUN mkdir --parents ${HOME}/repositorios && \

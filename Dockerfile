@@ -1,6 +1,6 @@
 FROM islasgeci/base:latest
 WORKDIR /workdir
-COPY . .
+COPY src /install_scripts
 
 # Define variables de entorno
 ENV DEBIAN_FRONTEND=noninteractive
@@ -25,6 +25,7 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     pip \
     r-base \
     ripgrep \
+    shellcheck \
     tmux \
     universal-ctags \
     wget
@@ -62,13 +63,10 @@ RUN curl \
 RUN shellspec --init
 
 ## Instala Neovim
-RUN cd $HOME && \
-    wget --directory-prefix=$HOME https://github.com/neovim/neovim/releases/download/stable/nvim.appimage && \
-    chmod u+x $HOME/nvim.appimage && \
-    $HOME/nvim.appimage --appimage-extract
+RUN /install_scripts/install_neovim.sh
 
 ## Instala lazygit
-RUN go install github.com/jesseduffield/lazygit@latest
+RUN /install_scripts/install_lazygit.sh
 
 # Importa archivos de configuración
 RUN mkdir --parents ${HOME}/repositorios && \

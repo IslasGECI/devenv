@@ -1,17 +1,21 @@
-tests: \
-		test_external_python_modules \
-		test_language_server_protocol \
-		test_os_packages \
-		test_os_version \
+all: install tests
 
 SHELL := /bin/bash
 
 .PHONY: \
-		test_external_python_modules \
-		test_language_server_protocol \
-		test_os_packages \
-		test_os_version \
-		tests \
+	install \
+	test_external_python_modules \
+	test_language_server_protocol \
+	test_os_packages \
+	test_os_version \
+	tests
+
+check:
+	shellcheck src/*
+
+install:
+	src/install_neovim.sh
+	src/install_lazygit.sh
 
 test_external_python_modules:
 	pip freeze | grep black==22
@@ -42,13 +46,21 @@ test_os_packages:
 	exa --version | grep "v0"
 	fdfind --version | grep "fd 8"
 	git --version | grep "version 2"
+	go version | grep "version go1"
 	neofetch --version | grep "Neofetch 7"
-	nvim --version | grep "NVIM v0"
+	nvim --version | grep "NVIM v0.7"
 	pip --version | grep "pip 22"
 	rg --version | grep "ripgrep 13"
+	shellcheck --version | grep "version: 0"
 	shellspec --version | grep "^0"
 	tmux -V | grep "tmux 3"
 	wget --version | grep "Wget 1"
 
 test_os_version:
 	cat /etc/os-release | grep "Ubuntu Jammy Jellyfish"
+
+tests: \
+		test_external_python_modules \
+		test_language_server_protocol \
+		test_os_packages \
+		test_os_version \

@@ -14,8 +14,10 @@ jobs:
       uses: actions/checkout@v2
     - name: Construye imagen con entorno de desarrollo
       run: docker build --tag evaristor/pde:stable --tag evaristor/pde:${github_sha:0:4} .
+    - name: Verifica el formato de los scripts
+      run: docker run --volume ${PWD}:/workdir evaristor/pde:stable make check
     - name: Ejecuta las pruebas de la imagen
-      run: docker run --volume ${PWD}:/workdir evaristor/pde:stable make
+      run: docker run --volume ${PWD}:/workdir evaristor/pde:stable make tests
     - name: Docker log-in
       env:
         docker_username: ${{ secrets.docker_username }}

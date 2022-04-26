@@ -36,11 +36,12 @@ test_language_server_protocol:
 	npm --version | grep "^8"
 	pyright --version | grep "pyright 1"
 	python --version | grep "Python 3.10"
-	R --version | grep "R version 4.1"
-	Rscript -e "packageVersion('languageserver')" | grep "'0."
+	R --version | grep "Unsuffered Consequences"
+	Rscript -e "packageVersion('languageserver')" | grep "0."
 
 test_os_packages:
 	/root/go/bin/lazygit --version | grep "unversioned"
+	/root/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.7"
 	ctags --version | grep "Universal Ctags 5"
 	curl --version | grep "curl 7"
 	exa --version | grep "v0"
@@ -48,7 +49,6 @@ test_os_packages:
 	git --version | grep "version 2"
 	go version | grep "version go1"
 	neofetch --version | grep "Neofetch 7"
-	nvim --version | grep "NVIM v0.7"
 	pip --version | grep "pip 22"
 	rg --version | grep "ripgrep 13"
 	shellcheck --version | grep "version: 0"
@@ -57,7 +57,8 @@ test_os_packages:
 	wget --version | grep "Wget 1"
 
 test_os_version:
-	cat /etc/os-release | grep "Ubuntu Jammy Jellyfish"
+	cat /etc/os-release | grep "Jammy Jellyfish"
+	cat /etc/os-release | grep "22.04 LTS"
 
 tests: \
 		test_external_python_modules \

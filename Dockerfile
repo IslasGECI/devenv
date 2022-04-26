@@ -30,9 +30,6 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     universal-ctags \
     wget
 
-# Use Python 3 as the default version of Python
-RUN ln --symbolic /usr/bin/python3 /usr/bin/python
-
 # Instala modulos con pip
 RUN pip install --upgrade pip && pip install \
     black \

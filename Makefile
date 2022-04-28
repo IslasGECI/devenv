@@ -3,6 +3,7 @@ all: install tests
 SHELL := /bin/bash
 
 .PHONY: \
+	all \
 	install \
 	test_external_python_modules \
 	test_language_server_protocol \

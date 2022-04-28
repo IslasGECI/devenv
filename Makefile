@@ -31,36 +31,37 @@ test_external_python_modules:
 	pip freeze | grep rope==1
 
 test_language_server_protocol:
-	apt install --simulate build-essential | grep "build-essential is already the newest version"
-	apt install --simulate libcurl4-openssl-dev | grep "libcurl4-openssl-dev is already the newest version"
-	apt install --simulate libssl-dev | grep "libssl-dev is already the newest version"
-	apt install --simulate libxml2-dev | grep "libxml2-dev is already the newest version"
-	npm --version | grep "^8"
+	Rscript -e "packageVersion('languageserver')" | egrep "0\.[0-9]+\.[0-9]+"
+	apt-cache policy build-essential | grep "Installed: 12"
+	apt-cache policy libcurl4-openssl-dev | grep "Installed: 7"
+	apt-cache policy libssl-dev | grep "Installed: 3"
+	apt-cache policy libxml2-dev | grep "Installed: 2"
+	apt-cache policy npm | grep "Installed: 8"
+	apt-cache policy python3 | grep "Installed: 3.10"
+	apt-cache policy r-base | grep "Installed: 4"
 	pyright --version | grep "pyright 1"
-	python --version | grep "Python 3.10"
-	R --version | grep "Unsuffered Consequences"
-	Rscript -e "packageVersion('languageserver')" | grep "0."
 
 test_os_packages:
 	$$HOME/.local/lib/shellspec/bin/shellspec --version | grep "^0"
 	$$HOME/go/bin/lazygit --version | grep "unversioned"
 	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.7"
-	ctags --version | grep "Universal Ctags 5"
-	curl --version | grep "curl 7"
-	exa --version | grep "v0"
-	fdfind --version | grep "fd 8"
-	git --version | grep "version 2"
-	go version | grep "version go1"
-	neofetch --version | grep "Neofetch 7"
-	pip --version | grep "pip 22"
-	rg --version | grep "ripgrep 13"
-	shellcheck --version | grep "version: 0"
-	tmux -V | grep "tmux 3"
-	wget --version | grep "Wget 1"
+	apt-cache policy curl | grep "Installed: 7"
+	apt-cache policy exa | grep "Installed: 0"
+	apt-cache policy fd-find | grep "Installed: 8"
+	apt-cache policy git | grep "Installed: 1:2"
+	apt-cache policy golang-go | grep "Installed: 2:1"
+	apt-cache policy neofetch | grep "Installed: 7"
+	apt-cache policy python3-pip | grep "Installed: 22"
+	apt-cache policy ripgrep | grep "Installed: 13"
+	apt-cache policy shellcheck | grep "Installed: 0"
+	apt-cache policy tmux | grep "Installed: 3"
+	apt-cache policy universal-ctags | grep "Installed: 5"
+	apt-cache policy wget | grep "Installed: 1"
 
 test_os_version:
+	cat /etc/os-release | grep "22.04"
 	cat /etc/os-release | grep "Jammy Jellyfish"
-	cat /etc/os-release | grep "22.04 LTS"
+	cat /etc/os-release | grep "LTS"
 
 tests: \
 		test_external_python_modules \

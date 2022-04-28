@@ -14,5 +14,5 @@ curl \
     --silent \
     | sh -s -- --yes
 echo "export PATH='$HOME/.local/lib/shellspec:$PATH'" >> ~/.profile
-$HOME/.local/lib/shellspec/shellspec --init
+"$HOME/.local/lib/shellspec/shellspec" --init
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Install latest ShellSpec
+# Install packages with pipx
 
 # unofficial strict mode: http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail

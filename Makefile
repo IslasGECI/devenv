@@ -42,6 +42,7 @@ test_language_server_protocol:
 	pyright --version | grep "pyright 1"
 
 test_os_packages:
+	$$HOME/.local/bin/rich --version | grep "^1"
 	$$HOME/.local/lib/shellspec/bin/shellspec --version | grep "^0"
 	$$HOME/go/bin/lazygit --version | grep "unversioned"
 	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.7"

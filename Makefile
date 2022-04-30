@@ -17,6 +17,7 @@ check:
 install:
 	src/install_lazygit.sh
 	src/install_neovim.sh
+	src/install_pipx_packages.sh
 	src/install_shellspec.sh
 
 test_external_python_modules:

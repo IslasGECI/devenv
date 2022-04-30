@@ -1,25 +1,15 @@
 FROM islasgeci/base:latest
-WORKDIR /workdir
 COPY src /install_scripts
 
 # Define variables de entorno
-ENV DEBIAN_FRONTEND=noninteractive
 ENV PATH="/root/.local/lib/shellspec:/workdir/src:$PATH"
-ENV PYTHONIOENCODING=utf-8
-ENV QT_QPA_PLATFORM=offscreen
-ENV TZ=US/Pacific
 
 # Instala paquetes en el sistema operativo
 RUN apt update && apt full-upgrade --yes && apt install --yes \
     build-essential \
-    curl \
     exa \
     fd-find \
-    git \
     golang-go \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libxml2-dev \
     neofetch \
     npm \
     pip \
@@ -29,7 +19,9 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     shellcheck \
     tmux \
     universal-ctags \
-    wget
+    wget \
+        && \
+    apt clean
 
 # Instala modulos con pip
 RUN pip install --upgrade pip && pip install \

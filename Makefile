@@ -52,6 +52,7 @@ test_os_packages:
 	apt-cache policy git | grep "Installed: 1:2"
 	apt-cache policy golang-go | grep "Installed: 2:1"
 	apt-cache policy neofetch | grep "Installed: 7"
+	apt-cache policy pipx | grep "Installed: 1"
 	apt-cache policy python3-pip | grep "Installed: 22"
 	apt-cache policy ripgrep | grep "Installed: 13"
 	apt-cache policy shellcheck | grep "Installed: 0"

@@ -23,6 +23,7 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     neofetch \
     npm \
     pip \
+    pipx \
     r-base \
     ripgrep \
     shellcheck \

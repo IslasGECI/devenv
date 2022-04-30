@@ -12,5 +12,7 @@ curl \
     --show-error \
     --silent \
     | sh -s -- --yes
+# Below, we want replacement without expansion so we use single quotes
+# shellcheck disable=SC2016
 sed --in-place '1s/^/export PATH="$HOME\/.local\/bin:$PATH"\n/' ~/.profile
 "$HOME/.local/lib/shellspec/shellspec" --init

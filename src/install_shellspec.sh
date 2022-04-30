@@ -12,6 +12,5 @@ curl \
     --show-error \
     --silent \
     | sh -s -- --yes
-sed --in-place '1s/^/export PATH="$HOME\/.local\/lib\/shellspec:$PATH"\n/' ~/.profile
+sed --in-place '1s/^/export PATH="$HOME\/.local\/bin:$PATH"\n/' ~/.profile
 "$HOME/.local/lib/shellspec/shellspec" --init
-

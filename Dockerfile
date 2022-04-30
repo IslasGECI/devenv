@@ -54,6 +54,8 @@ RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.co
 RUN /install_scripts/install_lazygit.sh
 ## Instala Neovim
 RUN /install_scripts/install_neovim.sh
+## Instala paquetes con pipx
+RUN /install_scripts/install_pipx_packages.sh
 ## Instala ShellSpec
 RUN /install_scripts/install_shellspec.sh
 

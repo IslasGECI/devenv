@@ -1,5 +1,10 @@
-#!/usr/bin/env --split-string="bash -euo pipefail"
+#!/usr/bin/env bash
 #
+# Install latest Neovim from GitHub
+
+# Set strict mode (http://redsymbol.net/articles/unofficial-bash-strict-mode)
+set -euo pipefail
+
 # Install latest Neovim from GitHub
 cd "$HOME"
 wget --directory-prefix="$HOME" https://github.com/neovim/neovim/releases/download/stable/nvim.appimage

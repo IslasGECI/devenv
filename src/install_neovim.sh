@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -euo pipefail
+#!/usr/bin/env --split-string="bash -euo pipefail"
 #
 # Install latest Neovim from GitHub
 cd "$HOME"

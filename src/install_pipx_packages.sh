@@ -2,7 +2,7 @@
 #
 # Install packages with pipx
 
-# unofficial strict mode: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+# [Set strict mode](http://redsymbol.net/articles/unofficial-bash-strict-mode)
 set -euo pipefail
 
 # Install packages with pipx

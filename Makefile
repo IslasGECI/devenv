@@ -19,7 +19,6 @@ install:
 	src/install_neovim.sh
 	src/install_npm_packages.sh
 	src/install_pipx_packages.sh
-	src/install_shellspec.sh
 
 test_external_python_modules:
 	pip freeze | grep black==22
@@ -44,7 +43,6 @@ test_language_server_protocol:
 	pyright --version | grep "pyright 1"
 
 test_os_packages:
-	$$HOME/.local/lib/shellspec/bin/shellspec --version | grep "^0"
 	$$HOME/go/bin/lazygit --version | grep "unversioned"
 	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.7"
 	apt-cache policy curl | grep "Installed: 7"

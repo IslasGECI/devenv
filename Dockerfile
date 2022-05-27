@@ -2,7 +2,7 @@ FROM islasgeci/base:latest
 COPY src /install_scripts
 
 # Define variables de entorno
-ENV PATH="/root/.local/lib/shellspec:/workdir/src:$PATH"
+ENV PATH="/workdir/src:$PATH"
 
 # Instala paquetes en el sistema operativo
 RUN apt update && apt full-upgrade --yes && apt install --yes \
@@ -49,8 +49,6 @@ RUN /install_scripts/install_lazygit.sh
 RUN /install_scripts/install_neovim.sh
 ## Instala paquetes con pipx
 RUN /install_scripts/install_pipx_packages.sh
-## Instala ShellSpec
-RUN /install_scripts/install_shellspec.sh
 
 # Importa archivos de configuración
 RUN mkdir --parents ${HOME}/repositorios && \

@@ -11,7 +11,6 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     fd-find \
     golang-go \
     neofetch \
-    npm \
     pip \
     pipx \
     r-base \

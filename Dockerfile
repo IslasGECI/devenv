@@ -36,7 +36,7 @@ RUN pip install --upgrade pip && pip install \
     rope
 
 # Instala modulos con snap
-RUN systemctl enable snapd
+RUN service snapd start
 RUN snap install node --classic
 
 # Instala modulos con npm

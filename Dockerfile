@@ -34,6 +34,10 @@ RUN pip install --upgrade pip && pip install \
     pytest \
     rope
 
+# Instala modulos con snap
+RUN snap install --classic \
+    node
+
 # Instala modulos con npm
 RUN npm install --global \
     pyright

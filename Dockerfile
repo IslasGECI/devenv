@@ -36,6 +36,8 @@ RUN pip install --upgrade pip && pip install \
     rope
 
 # Instala modulos con snap
+RUN apt install -yqq daemonize dbus-user-session fontconfig && \
+    daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target exec nsenter -t $(pidof systemd) -a su - $LOGNAME
 RUN snap install node --classic
 
 # Instala modulos con npm

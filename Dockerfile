@@ -16,6 +16,7 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     r-base \
     ripgrep \
     shellcheck \
+    snapd \
     tmux \
     universal-ctags \
     wget \

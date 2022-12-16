@@ -35,8 +35,17 @@ RUN pip install --upgrade pip && pip install \
     pytest \
     rope
 
-# Instala modulos con snap
-RUN snap install node --classic
+# Install Node
+ENV NODE_VERSION=18.12.1
+RUN apt install -y curl
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+ENV NVM_DIR=/root/.nvm
+RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+RUN node --version
+RUN npm --version
 
 # Instala modulos con npm
 RUN npm install --global \

@@ -37,7 +37,6 @@ test_language_server_protocol:
 	apt-cache policy libcurl4-openssl-dev | grep "Installed: 7"
 	apt-cache policy libssl-dev | grep "Installed: 3"
 	apt-cache policy libxml2-dev | grep "Installed: 2"
-	apt-cache policy npm | grep "Installed: 8"
 	apt-cache policy python3 | grep "Installed: 3.10"
 	apt-cache policy r-base | grep "Installed: 4"
 	pyright --version | grep "pyright 1"

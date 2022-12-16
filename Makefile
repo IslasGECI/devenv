@@ -43,7 +43,7 @@ test_language_server_protocol:
 
 test_os_packages:
 	$$HOME/go/bin/lazygit --version | grep "unversioned"
-	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.7"
+	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.8"
 	apt-cache policy curl | grep "Installed: 7"
 	apt-cache policy exa | grep "Installed: 0"
 	apt-cache policy fd-find | grep "Installed: 8"

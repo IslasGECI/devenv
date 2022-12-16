@@ -59,6 +59,8 @@ test_os_packages:
 	apt-cache policy universal-ctags | grep "Installed: 5"
 	apt-cache policy wget | grep "Installed: 1"
 	rich --version | grep "^1"
+	node --version | grep "v18"
+	npm --version | grep "^8"
 
 test_os_version:
 	cat /etc/os-release | grep "22.04"

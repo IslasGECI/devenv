@@ -23,7 +23,7 @@ install:
 test_external_python_modules:
 	pip freeze | grep black==22
 	pip freeze | grep dunk==0
-	pip freeze | grep flake8==5
+	pip freeze | grep flake8==6
 	pip freeze | grep ipython==8
 	pip freeze | grep mutmut==2
 	pip freeze | grep powerline-shell==0

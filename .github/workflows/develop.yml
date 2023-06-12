@@ -13,17 +13,17 @@ jobs:
     - name: Copia repositorio
       uses: actions/checkout@v2
     - name: Construye imagen con entorno de desarrollo
-      run: docker build --tag evaristor/pde:latest --tag evaristor/pde:${github_sha:0:4} .
+      run: docker build --tag IslasGECI/pde:latest --tag IslasGECI/pde:${github_sha:0:4} .
     - name: Verifica el formato de los scripts
-      run: docker run --volume ${PWD}:/workdir evaristor/pde:latest make check
+      run: docker run --volume ${PWD}:/workdir IslasGECI/pde:latest make check
     - name: Ejecuta las pruebas de la imagen
-      run: docker run --volume ${PWD}:/workdir evaristor/pde:latest make tests
+      run: docker run --volume ${PWD}:/workdir IslasGECI/pde:latest make tests
     - name: Docker log-in
       env:
         docker_username: ${{ secrets.docker_username }}
         docker_password: ${{ secrets.docker_password }}
       run: echo "${docker_password}" | docker login -u "${docker_username}" --password-stdin
     - name: Sube latest a Docker Hub
-      run: docker push evaristor/pde:latest
+      run: docker push IslasGECI/pde:latest
     - name: Sube sha a Docker Hub
-      run: docker push evaristor/pde:${github_sha:0:4}
+      run: docker push IslasGECI/pde:${github_sha:0:4}

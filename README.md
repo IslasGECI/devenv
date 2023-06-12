@@ -3,8 +3,8 @@
 Ejecuta:
 
 ```shell
-docker pull evaristor/pde:latest
-docker run --interactive --name pde --rm --tty --volume ${PWD}:/workdir evaristor/pde:latest bash
+docker pull IslasGECI/pde:latest
+docker run --interactive --name pde --rm --tty --volume ${PWD}:/workdir IslasGECI/pde:latest bash
 ```
 
 # Related repos

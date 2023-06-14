@@ -21,7 +21,7 @@ install:
 	src/install_pipx_packages.sh
 
 test_external_python_modules:
-	pip freeze | grep black==22
+	pip freeze | grep black==23
 	pip freeze | grep dunk==0
 	pip freeze | grep flake8==6
 	pip freeze | grep ipython==8

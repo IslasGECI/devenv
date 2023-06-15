@@ -64,6 +64,6 @@ RUN /install_scripts/install_pipx_packages.sh
 
 # Importa archivos de configuración
 RUN mkdir --parents ${HOME}/repositorios && \
-    git clone --bare https://github.com/devarops/dotfiles.git ${HOME}/repositorios/dotfiles.git && \
+    git clone --bare https://github.com/IslasGECI/dotfiles.git ${HOME}/repositorios/dotfiles.git && \
     git --git-dir=${HOME}/repositorios/dotfiles.git --work-tree=${HOME} checkout && \
     git --git-dir=${HOME}/repositorios/dotfiles.git --work-tree=${HOME} config --local status.showUntrackedFiles no

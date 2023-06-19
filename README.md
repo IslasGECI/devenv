@@ -1,4 +1,4 @@
-# Personal Development Environment (PDE)
+# Portable Development Environment (PDE)
 
 Ejecuta:
 

@@ -1,5 +1,5 @@
 FROM islasgeci/base:latest
-COPY dotfiles /dotfiles
+COPY dotfiles /root
 COPY src /install_scripts
 
 # Define variables de entorno
@@ -62,6 +62,3 @@ RUN /install_scripts/install_lazygit.sh
 RUN /install_scripts/install_neovim.sh
 ## Instala paquetes con pipx
 RUN /install_scripts/install_pipx_packages.sh
-
-# Import aliases
-RUN	echo ". /dotfiles/.bash_aliases" >> /etc/bash.bashrc

@@ -63,6 +63,5 @@ RUN /install_scripts/install_neovim.sh
 ## Instala paquetes con pipx
 RUN /install_scripts/install_pipx_packages.sh
 
-# Importa archivos de configuración
-RUN	mkdir --parents /etc/profile.d/ && \
-    cp /dotfiles/.bash_aliases /etc/profile.d/bash_aliases.sh
+# Import aliases
+RUN	echo ". /dotfiles/.bash_aliases" >> /etc/bash.bashrc

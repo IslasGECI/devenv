@@ -3,5 +3,5 @@
 Run:
 
 ```shell
-docker run --interactive --name pde --rm --tty --volume ${PWD}:/workdir islasgeci/pde:latest bash
+docker run --interactive --rm --tty --volume ${PWD}:/workdir islasgeci/pde:latest bash
 ```

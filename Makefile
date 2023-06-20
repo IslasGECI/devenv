@@ -1,10 +1,9 @@
-all: install tests
+all: tests
 
 SHELL := /bin/bash
 
 .PHONY: \
 	all \
-	install \
 	test_external_python_modules \
 	test_language_server_protocol \
 	test_os_packages \
@@ -13,12 +12,6 @@ SHELL := /bin/bash
 
 check:
 	shellcheck src/*
-
-install:
-	src/install_lazygit.sh
-	src/install_neovim.sh
-	src/install_npm_packages.sh
-	src/install_pipx_packages.sh
 
 test_external_python_modules:
 	pip freeze | grep black==23
@@ -70,4 +63,4 @@ tests: \
 		test_external_python_modules \
 		test_language_server_protocol \
 		test_os_packages \
-		test_os_version \
+		test_os_version

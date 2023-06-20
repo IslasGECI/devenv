@@ -62,3 +62,7 @@ RUN /install_scripts/install_lazygit.sh
 RUN /install_scripts/install_neovim.sh
 ## Instala paquetes con pipx
 RUN /install_scripts/install_pipx_packages.sh
+
+# Install Neovim configuration
+RUN mkdir --parents /root/.config && \
+    git clone https://github.com/nvim-lua/kickstart.nvim.git /root/.config/nvim

@@ -5,13 +5,15 @@ COPY src /install_scripts
 # Define variables de entorno
 ENV PATH="/workdir/src:$PATH"
 
+# Install Nix package manager
+RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon
+
 # Instala paquetes en el sistema operativo
 RUN apt update && apt full-upgrade --yes && apt install --yes \
     build-essential \
     exa \
     fd-find \
     golang-go \
-    neofetch \
     pip \
     pipx \
     r-base \

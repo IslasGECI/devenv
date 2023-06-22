@@ -1,12 +1,14 @@
 FROM islasgeci/base:latest
 COPY dotfiles /root
+COPY nix/flake.nix /workdir
 COPY src /install_scripts
 
 # Define variables de entorno
 ENV PATH="/workdir/src:$PATH"
 
 # Install Nix package manager
-RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon
+RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
+    echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 
 # Instala paquetes en el sistema operativo
 RUN apt update && apt full-upgrade --yes && apt install --yes \

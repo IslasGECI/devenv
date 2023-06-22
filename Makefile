@@ -42,7 +42,6 @@ test_os_packages:
 	apt-cache policy fd-find | grep "Installed: 8"
 	apt-cache policy git | grep "Installed: 1:2"
 	apt-cache policy golang-go | grep "Installed: 2:1"
-	apt-cache policy neofetch | grep "Installed: 7"
 	apt-cache policy pipx | grep "Installed: 1"
 	apt-cache policy python3-pip | grep "Installed: 22"
 	apt-cache policy ripgrep | grep "Installed: 13"
@@ -50,9 +49,10 @@ test_os_packages:
 	apt-cache policy tmux | grep "Installed: 3"
 	apt-cache policy universal-ctags | grep "Installed: 5"
 	apt-cache policy wget | grep "Installed: 1"
-	rich --version | grep "^1"
+	nix develop --command neofetch --version | grep "Neofetch 7"
 	node --version | grep "v18"
 	npm --version | grep "^8"
+	rich --version | grep "^1"
 
 test_os_version:
 	cat /etc/os-release | grep "22.04"

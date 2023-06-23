@@ -35,6 +35,7 @@ test_language_server_protocol:
 	pyright --version | grep "pyright 1"
 
 test_os_packages:
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 	$$HOME/go/bin/lazygit --version | grep "unversioned"
 	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.9"
 	apt-cache policy curl | grep "Installed: 7"

@@ -8,6 +8,8 @@ jobs:
     steps:
     - name: Copia repositorio
       uses: actions/checkout@v2
+    - name: Remove lock file
+      run: rm flake.lock
     - name: Construye imagen con entorno de desarrollo
       run: docker build --tag islasgeci/pde:latest --tag islasgeci/pde:${github_sha:0:4} .
     - name: Verifica el formato de los scripts

@@ -1,6 +1,5 @@
 FROM islasgeci/base:latest
 COPY dotfiles /root
-COPY nix/flake.nix /workdir
 COPY src /install_scripts
 
 # Define variables de entorno

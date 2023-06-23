@@ -4,6 +4,7 @@ SHELL := /bin/bash
 
 .PHONY: \
 	all \
+	check \
 	test_external_python_modules \
 	test_language_server_protocol \
 	test_os_packages \
@@ -35,7 +36,7 @@ test_language_server_protocol:
 	pyright --version | grep "pyright 1"
 
 test_os_packages:
-	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command neofetch --version | grep "Neofetch 7"
 	$$HOME/go/bin/lazygit --version | grep "unversioned"
 	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.9"
 	apt-cache policy curl | grep "Installed: 7"
@@ -50,7 +51,6 @@ test_os_packages:
 	apt-cache policy tmux | grep "Installed: 3"
 	apt-cache policy universal-ctags | grep "Installed: 5"
 	apt-cache policy wget | grep "Installed: 1"
-	nix develop --command neofetch --version | grep "Neofetch 7"
 	node --version | grep "v18"
 	npm --version | grep "^8"
 	rich --version | grep "^1"

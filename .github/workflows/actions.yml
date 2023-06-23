@@ -23,3 +23,10 @@ jobs:
       run: docker push islasgeci/pde:latest
     - name: Sube sha a Docker Hub
       run: docker push islasgeci/pde:${github_sha:0:4}
+    - name: Auto-commit flake.lock
+      uses: stefanzweifel/git-auto-commit-action@master
+      with:
+        commit_message: 🤖 Apply automatic changes
+        file_pattern: 'flake.lock'
+        commit_user_name: Ciencia de Datos • GECI
+        commit_user_email: ciencia.datos@islas.org.mx

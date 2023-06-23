@@ -11,9 +11,9 @@ jobs:
     - name: Construye imagen con entorno de desarrollo
       run: docker build --tag islasgeci/pde:latest --tag islasgeci/pde:${github_sha:0:4} .
     - name: Verifica el formato de los scripts
-      run: docker run --volume ${PWD}:/workdir islasgeci/pde:latest make check
+      run: docker run islasgeci/pde:latest make check
     - name: Ejecuta las pruebas de la imagen
-      run: docker run --volume ${PWD}:/workdir islasgeci/pde:latest make tests
+      run: docker run islasgeci/pde:latest make tests
     - name: Docker log-in
       env:
         docker_username: ${{ secrets.docker_username }}

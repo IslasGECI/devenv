@@ -12,7 +12,7 @@ SHELL := /bin/bash
 	tests
 
 check:
-	shellcheck src/*
+	shellcheck /install_scripts/*
 
 test_external_python_modules:
 	pip freeze | grep black==23

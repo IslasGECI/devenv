@@ -1,5 +1,6 @@
 FROM islasgeci/base:latest
 COPY dotfiles /root
+COPY flake.nix /workdir/flake.nix
 COPY src /install_scripts
 
 # Define variables de entorno
@@ -9,7 +10,7 @@ ENV PATH="/workdir/src:$PATH"
 RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
     echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf && \
     . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
-    nix develop "github:IslasGECI/pde" --command neofetch
+    nix develop --command neofetch
 
 # Instala paquetes en el sistema operativo
 RUN apt update && apt full-upgrade --yes && apt install --yes \

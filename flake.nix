@@ -10,7 +10,10 @@
     in {
       packages.x86_64-linux.default = pkgs.mkShell {
         name = "pde";
-        packages = with pkgs; [ neofetch ];
+        packages = with pkgs; [
+          neofetch
+          neovim
+        ];
       };
     };
 }

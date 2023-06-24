@@ -15,7 +15,6 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     build-essential \
     exa \
     fd-find \
-    golang-go \
     pip \
     pipx \
     r-base \
@@ -61,8 +60,6 @@ RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.co
 
 # Inslalaciones ad-hoc:
 COPY src /install_scripts
-## Instala lazygit
-RUN /install_scripts/install_lazygit.sh
 ## Instala Neovim
 RUN /install_scripts/install_neovim.sh
 ## Instala paquetes con pipx

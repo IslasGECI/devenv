@@ -37,13 +37,11 @@ test_language_server_protocol:
 
 test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command neofetch --version | grep "Neofetch 7"
-	$$HOME/go/bin/lazygit --version | grep "unversioned"
 	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.9"
 	apt-cache policy curl | grep "Installed: 7"
 	apt-cache policy exa | grep "Installed: 0"
 	apt-cache policy fd-find | grep "Installed: 8"
 	apt-cache policy git | grep "Installed: 1:2"
-	apt-cache policy golang-go | grep "Installed: 2:1"
 	apt-cache policy pipx | grep "Installed: 1"
 	apt-cache policy python3-pip | grep "Installed: 22"
 	apt-cache policy ripgrep | grep "Installed: 13"

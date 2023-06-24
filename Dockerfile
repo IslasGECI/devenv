@@ -65,4 +65,5 @@ RUN /install_scripts/install_pipx_packages.sh
 RUN mkdir --parents /root/.config && \
     git clone https://github.com/nvim-lua/kickstart.nvim.git /root/.config/nvim && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
-COPY dotfiles /root
+RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
+    cp --force --recursive /root/pde/dotfiles/. /root

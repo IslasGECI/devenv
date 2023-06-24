@@ -16,11 +16,9 @@ check:
 
 test_external_python_modules:
 	pip freeze | grep black==23
-	pip freeze | grep dunk==0
 	pip freeze | grep flake8==6
 	pip freeze | grep ipython==8
 	pip freeze | grep mutmut==2
-	pip freeze | grep powerline-shell==0
 	pip freeze | grep pylint==2
 	pip freeze | grep pytest==7
 	pip freeze | grep rope==1
@@ -37,7 +35,7 @@ test_language_server_protocol:
 
 test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command neofetch --version | grep "Neofetch 7"
-	$$HOME/squashfs-root/usr/bin/nvim --version | grep "NVIM v0.9"
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command nvim --version | grep "NVIM v0.9"
 	apt-cache policy curl | grep "Installed: 7"
 	apt-cache policy exa | grep "Installed: 0"
 	apt-cache policy fd-find | grep "Installed: 8"

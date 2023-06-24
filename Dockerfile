@@ -30,11 +30,9 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
 # Instala modulos con pip
 RUN pip install --upgrade pip && pip install \
     black \
-    dunk \
     flake8 \
     ipython \
     mutmut \
-    powerline-shell \
     pylint \
     pytest \
     rope

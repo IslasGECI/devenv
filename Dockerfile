@@ -60,8 +60,6 @@ RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.co
 
 # Inslalaciones ad-hoc:
 COPY src /install_scripts
-## Instala Neovim
-RUN /install_scripts/install_neovim.sh
 ## Instala paquetes con pipx
 RUN /install_scripts/install_pipx_packages.sh
 

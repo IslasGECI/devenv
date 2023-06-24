@@ -1,5 +1,5 @@
 alias develop='nix develop "github:IslasGECI/pde"'
-alias nvim='[ -f /.dockerenv ] && /root/squashfs-root/usr/bin/nvim || echo "ERROR: Please run Neovim inside a container"'
+alias nvim='which nvim | grep "/nix/store" && nvim || nix develop "github:IslasGECI/pde" --command nvim'
 alias v=nvim
 alias vi=nvim
 alias vim=nvim

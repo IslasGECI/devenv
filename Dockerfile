@@ -1,12 +1,10 @@
 FROM islasgeci/base:latest
-COPY dotfiles /root
-COPY flake.nix /workdir/flake.nix
-COPY src /install_scripts
 
 # Define variables de entorno
 ENV PATH="/workdir/src:$PATH"
 
 # Install Nix package manager
+COPY flake.nix /workdir/flake.nix
 RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
     echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf && \
     . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
@@ -62,6 +60,7 @@ RUN npm install --global \
 RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
 
 # Inslalaciones ad-hoc:
+COPY src /install_scripts
 ## Instala lazygit
 RUN /install_scripts/install_lazygit.sh
 ## Instala Neovim
@@ -73,3 +72,4 @@ RUN /install_scripts/install_pipx_packages.sh
 RUN mkdir --parents /root/.config && \
     git clone https://github.com/nvim-lua/kickstart.nvim.git /root/.config/nvim && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
+COPY dotfiles /root

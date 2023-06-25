@@ -6,29 +6,27 @@ jobs:
     env:
       github_sha: ${{ github.sha }}
     steps:
-    - name: Copia repositorio
-      uses: actions/checkout@v2
+    - name: Checkout repo
+      uses: actions/checkout@main
     - name: Remove lock file
       run: rm flake.lock
-    - name: Construye imagen con entorno de desarrollo
+    - name: Build Docker image
       run: docker build --tag islasgeci/pde:latest --tag islasgeci/pde:${github_sha:0:4} .
-    - name: Verifica el formato de los scripts
-      run: docker run --volume ${PWD}:/workdir islasgeci/pde:latest make check
-    - name: Ejecuta las pruebas de la imagen
+    - name: Run tests
       run: docker run --volume ${PWD}:/workdir islasgeci/pde:latest make tests
     - name: Docker log-in
       env:
         docker_username: ${{ secrets.docker_username }}
         docker_password: ${{ secrets.docker_password }}
       run: echo "${docker_password}" | docker login -u "${docker_username}" --password-stdin
-    - name: Sube latest a Docker Hub
+    - name: Push latest image to Docker Hub
       run: docker push islasgeci/pde:latest
-    - name: Sube sha a Docker Hub
+    - name: Push tegged image to Docker Hub
       run: docker push islasgeci/pde:${github_sha:0:4}
     - name: Auto-commit flake.lock
       uses: stefanzweifel/git-auto-commit-action@master
       with:
-        commit_message: 🤖 Apply automatic changes
+        commit_message: 🤖 Commit lock file
         file_pattern: 'flake.lock'
         commit_user_name: Ciencia de Datos • GECI
         commit_user_email: ciencia.datos@islas.org.mx

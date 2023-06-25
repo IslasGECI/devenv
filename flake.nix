@@ -15,6 +15,7 @@
           neovim
           nodePackages.pyright
           rich-cli
+          shellcheck
         ];
       };
     };

@@ -34,22 +34,6 @@ RUN pip install --upgrade pip && pip install \
     pytest \
     rope
 
-# Install Node
-ENV NODE_VERSION=18.12.1
-RUN apt install -y curl
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-ENV NVM_DIR=/root/.nvm
-RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION}
-RUN . "$NVM_DIR/nvm.sh" && nvm use v${NODE_VERSION}
-RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
-ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
-RUN node --version
-RUN npm --version
-
-# Instala modulos con npm
-RUN npm install --global \
-    pyright
-
 # Instala paquetes de R
 RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
 
@@ -58,3 +42,4 @@ RUN mkdir --parents /root/.config && \
     git clone https://github.com/nvim-lua/kickstart.nvim.git /root/.config/nvim && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
 RUN cp --force --recursive /root/pde/dotfiles/. /root
+ENTRYPOINT  ["nix", "develop"]

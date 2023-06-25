@@ -24,6 +24,7 @@ test_external_python_modules:
 	pip freeze | grep rope==1
 
 test_language_server_protocol:
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pyright --version | grep "pyright 1"
 	Rscript -e "packageVersion('languageserver')" | egrep "0\.[0-9]+\.[0-9]+"
 	apt-cache policy build-essential | grep "Installed: 12"
 	apt-cache policy libcurl4-openssl-dev | grep "Installed: 7"
@@ -31,7 +32,6 @@ test_language_server_protocol:
 	apt-cache policy libxml2-dev | grep "Installed: 2"
 	apt-cache policy python3 | grep "Installed: 3.10"
 	apt-cache policy r-base | grep "Installed: 4"
-	pyright --version | grep "pyright 1"
 
 test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command neofetch --version | grep "Neofetch 7"
@@ -47,8 +47,6 @@ test_os_packages:
 	apt-cache policy tmux | grep "Installed: 3"
 	apt-cache policy universal-ctags | grep "Installed: 5"
 	apt-cache policy wget | grep "Installed: 1"
-	node --version | grep "v18"
-	npm --version | grep "^8"
 
 test_os_version:
 	cat /etc/os-release | grep "22.04"

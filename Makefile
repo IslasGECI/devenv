@@ -36,11 +36,11 @@ test_language_server_protocol:
 test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command neofetch --version | grep "Neofetch 7"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command nvim --version | grep "NVIM v0.9"
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command rich --version | grep "^1"
 	apt-cache policy curl | grep "Installed: 7"
 	apt-cache policy exa | grep "Installed: 0"
 	apt-cache policy fd-find | grep "Installed: 8"
 	apt-cache policy git | grep "Installed: 1:2"
-	apt-cache policy pipx | grep "Installed: 1"
 	apt-cache policy python3-pip | grep "Installed: 22"
 	apt-cache policy ripgrep | grep "Installed: 13"
 	apt-cache policy shellcheck | grep "Installed: 0"
@@ -49,7 +49,6 @@ test_os_packages:
 	apt-cache policy wget | grep "Installed: 1"
 	node --version | grep "v18"
 	npm --version | grep "^8"
-	rich --version | grep "^1"
 
 test_os_version:
 	cat /etc/os-release | grep "22.04"

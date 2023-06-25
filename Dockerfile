@@ -1,6 +1,7 @@
 FROM islasgeci/base:latest
 
 # Install Nix package manager
+ENV PATH="/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
 RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
     cp /root/pde/flake.nix /workdir/flake.nix
 RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \

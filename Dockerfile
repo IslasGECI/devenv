@@ -14,7 +14,6 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
     exa \
     fd-find \
     pip \
-    pipx \
     r-base \
     ripgrep \
     shellcheck \
@@ -53,10 +52,6 @@ RUN npm install --global \
 
 # Instala paquetes de R
 RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
-
-# Inslalaciones ad-hoc:
-## Instala paquetes con pipx
-RUN /root/pde/src/install_pipx_packages.sh
 
 # Install Neovim configuration
 RUN mkdir --parents /root/.config && \

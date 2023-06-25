@@ -1,10 +1,8 @@
 FROM islasgeci/base:latest
 
-# Define variables de entorno
-ENV PATH="/workdir/src:$PATH"
-
 # Install Nix package manager
-COPY flake.nix /workdir/flake.nix
+RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
+    cp /root/pde/flake.nix /workdir/flake.nix
 RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
     echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf && \
     . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
@@ -57,13 +55,11 @@ RUN npm install --global \
 RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
 
 # Inslalaciones ad-hoc:
-COPY src /install_scripts
 ## Instala paquetes con pipx
-RUN /install_scripts/install_pipx_packages.sh
+RUN /root/pde/src/install_pipx_packages.sh
 
 # Install Neovim configuration
 RUN mkdir --parents /root/.config && \
     git clone https://github.com/nvim-lua/kickstart.nvim.git /root/.config/nvim && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
-RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
-    cp --force --recursive /root/pde/dotfiles/. /root
+RUN cp --force --recursive /root/pde/dotfiles/. /root

@@ -42,4 +42,5 @@ RUN mkdir --parents /root/.config && \
     git clone https://github.com/nvim-lua/kickstart.nvim.git /root/.config/nvim && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
 RUN cp --force --recursive /root/pde/dotfiles/. /root
+
 ENTRYPOINT  ["nix", "develop"]

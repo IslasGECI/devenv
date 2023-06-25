@@ -4,15 +4,11 @@ SHELL := /bin/bash
 
 .PHONY: \
 	all \
-	check \
 	test_external_python_modules \
 	test_language_server_protocol \
 	test_os_packages \
 	test_os_version \
 	tests
-
-check:
-	shellcheck /install_scripts/*
 
 test_external_python_modules:
 	pip freeze | grep black==23

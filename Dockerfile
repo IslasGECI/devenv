@@ -43,4 +43,4 @@ RUN mkdir --parents /root/.config && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
 RUN cp --force --recursive /root/pde/dotfiles/. /root
 
-CMD  ["nix", "develop"]
+CMD ["nix", "develop", "'github:IslasGECI/pde'"]

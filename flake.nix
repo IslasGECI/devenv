@@ -13,6 +13,7 @@
         packages = with pkgs; [
           neofetch
           neovim
+          nodejs_20
           nodePackages.npm
           nodePackages.pyright
           rich-cli

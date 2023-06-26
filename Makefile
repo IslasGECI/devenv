@@ -11,27 +11,27 @@ SHELL := /bin/bash
 	tests
 
 test_external_python_modules:
-	pip freeze | grep black==23
-	pip freeze | grep flake8==6
-	pip freeze | grep ipython==8
-	pip freeze | grep mutmut==2
-	pip freeze | grep pylint==2
-	pip freeze | grep pytest==7
-	pip freeze | grep rope==1
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pip freeze | grep black-23
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pip freeze | grep flake8-6
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pip freeze | grep ipython-8
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pip freeze | grep pylint-2
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pip freeze | grep pytest-7
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pip freeze | grep rope-1
 
 test_language_server_protocol:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command node --version | grep "v20"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command npm --version | grep "^9"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pyright --version | grep "pyright 1"
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command python --version | grep "Python 3.10"
 	Rscript -e "packageVersion('languageserver')" | egrep "0\.[0-9]+\.[0-9]+"
 	apt-cache policy build-essential | grep "Installed: 12"
 	apt-cache policy libcurl4-openssl-dev | grep "Installed: 7"
 	apt-cache policy libssl-dev | grep "Installed: 3"
 	apt-cache policy libxml2-dev | grep "Installed: 2"
-	apt-cache policy python3 | grep "Installed: 3.10"
 	apt-cache policy r-base | grep "Installed: 4"
 
 test_os_packages:
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command mutmut --version | grep "version 2"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command neofetch --version | grep "Neofetch 7"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command nvim --version | grep "NVIM v0.9"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pip --version | grep "pip 23"

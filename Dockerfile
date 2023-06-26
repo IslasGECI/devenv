@@ -23,16 +23,6 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
         && \
     apt clean
 
-# Instala modulos con pip
-RUN pip install --upgrade pip && pip install \
-    black \
-    flake8 \
-    ipython \
-    mutmut \
-    pylint \
-    pytest \
-    rope
-
 # Instala paquetes de R
 RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
 

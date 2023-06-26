@@ -16,6 +16,7 @@
       black
       flake8
       ipython
+      pip
       pylint
       pytest
       rope
@@ -26,7 +27,6 @@
     nodejs_20
     nodePackages.npm
     nodePackages.pyright
-    python310Packages.pip
     rich-cli
     shellcheck
       ];

@@ -1,13 +1,5 @@
 FROM islasgeci/base:latest
 
-# Install Nix package manager
-ENV PATH="/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
-RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
-    cp /root/pde/flake.nix /workdir/flake.nix
-RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
-    echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf && \
-    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
-    nix develop --command neofetch
 
 # Instala paquetes en el sistema operativo
 RUN apt update && apt full-upgrade --yes && apt install --yes \
@@ -23,8 +15,14 @@ RUN apt update && apt full-upgrade --yes && apt install --yes \
         && \
     apt clean
 
-# Instala paquetes de R
-RUN Rscript -e "install.packages('languageserver', repos='http://cran.rstudio.com')"
+# Install Nix package manager
+ENV PATH="/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
+RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
+    cp /root/pde/flake.nix /workdir/flake.nix
+RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
+    echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf && \
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
+    nix develop --command neofetch
 
 # Install Neovim configuration
 RUN mkdir --parents /root/.config && \
@@ -32,4 +30,5 @@ RUN mkdir --parents /root/.config && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
 RUN cp --force --recursive /root/pde/dotfiles/. /root
 
+# Enter the development environment
 CMD ["nix", "develop", "github:IslasGECI/pde"]

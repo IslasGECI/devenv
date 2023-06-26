@@ -28,6 +28,7 @@
     nodePackages.npm
     nodePackages.pyright
     rich-cli
+    rPackages.languageserver
     shellcheck
       ];
     };

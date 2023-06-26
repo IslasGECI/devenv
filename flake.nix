@@ -13,6 +13,7 @@
         packages = with pkgs; [
           neofetch
           neovim
+          nodePackages.npm
           nodePackages.pyright
           rich-cli
           shellcheck

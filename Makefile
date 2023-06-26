@@ -20,6 +20,7 @@ test_external_python_modules:
 	pip freeze | grep rope==1
 
 test_language_server_protocol:
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command npm --version | grep "^9"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pyright --version | grep "pyright 1"
 	Rscript -e "packageVersion('languageserver')" | egrep "0\.[0-9]+\.[0-9]+"
 	apt-cache policy build-essential | grep "Installed: 12"

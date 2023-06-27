@@ -1,6 +1,5 @@
 FROM islasgeci/base:latest
 
-
 # Instala paquetes en el sistema operativo
 RUN apt update && apt full-upgrade --yes && apt install --yes \
     build-essential \

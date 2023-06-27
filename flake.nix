@@ -12,7 +12,7 @@
         name = "pde";
 
   packages = with pkgs; [
-    (pkgs.python3.withPackages(ps: with ps; [ 
+    (python3.withPackages(ps: with ps; [
       black
       flake8
       ipython
@@ -21,14 +21,13 @@
       pytest
       rope
     ]))
+    (rWrapper.override{packages = with rPackages; [ languageserver ];})
+    (with nodePackages; [ npm pyright ])
     mutmut
     neofetch
     neovim
     nodejs_20
-    nodePackages.npm
-    nodePackages.pyright
     rich-cli
-    rPackages.languageserver
     shellcheck
       ];
     };

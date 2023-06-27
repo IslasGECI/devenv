@@ -29,6 +29,7 @@
     neovim
     nodejs_20
     rich-cli
+    ripgrep
     shellcheck
       ];
     };

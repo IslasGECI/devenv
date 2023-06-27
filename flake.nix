@@ -23,6 +23,7 @@
     ]))
     (rWrapper.override{packages = with rPackages; [ languageserver ];})
     (with nodePackages; [ npm pyright ])
+    fd
     mutmut
     neofetch
     neovim

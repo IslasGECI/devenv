@@ -2,11 +2,11 @@ FROM islasgeci/base:latest
 
 # Install Nix package manager
 ENV PATH="/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
+RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
+    echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
     cp /root/pde/flake.nix /workdir/flake.nix
-RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
-    echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf && \
-    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
+RUN . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
     nix develop --command neofetch
 
 # Install Neovim configuration

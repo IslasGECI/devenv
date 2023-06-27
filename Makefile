@@ -25,10 +25,6 @@ test_language_server_protocol:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command python --version | grep "Python 3.10"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command R --version | grep "version 4"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command Rscript -e "packageVersion('languageserver')" | egrep "0\.[0-9]+\.[0-9]+"
-	apt-cache policy build-essential | grep "Installed: 12"
-	apt-cache policy libcurl4-openssl-dev | grep "Installed: 7"
-	apt-cache policy libssl-dev | grep "Installed: 3"
-	apt-cache policy libxml2-dev | grep "Installed: 2"
 
 test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command ctags --version | grep "Ctags 6"

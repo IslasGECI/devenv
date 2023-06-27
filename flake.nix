@@ -36,6 +36,7 @@
     rich-cli
     ripgrep
     shellcheck
+    universal-ctags
       ];
     };
   };

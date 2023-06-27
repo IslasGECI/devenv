@@ -31,6 +31,7 @@ test_language_server_protocol:
 	apt-cache policy libxml2-dev | grep "Installed: 2"
 
 test_os_packages:
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command ctags --version | grep "Ctags 6"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command fd --version | grep "fd 8"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command mutmut --version | grep "version 2"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command neofetch --version | grep "Neofetch 7"
@@ -39,7 +40,6 @@ test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command rg --version | grep "ripgrep 13"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command rich --version | grep "^1"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command shellcheck --version | grep "version: 0"
-	apt-cache policy universal-ctags | grep "Installed: 5"
 
 test_os_version:
 	cat /etc/os-release | grep "22.04"

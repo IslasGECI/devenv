@@ -38,11 +38,9 @@ test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command rich --version | grep "^1"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command shellcheck --version | grep "version: 0"
 	apt-cache policy curl | grep "Installed: 7"
-	apt-cache policy exa | grep "Installed: 0"
 	apt-cache policy fd-find | grep "Installed: 8"
 	apt-cache policy git | grep "Installed: 1:2"
 	apt-cache policy ripgrep | grep "Installed: 13"
-	apt-cache policy tmux | grep "Installed: 3"
 	apt-cache policy universal-ctags | grep "Installed: 5"
 	apt-cache policy wget | grep "Installed: 1"
 

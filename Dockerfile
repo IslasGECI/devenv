@@ -1,16 +1,5 @@
 FROM islasgeci/base:latest
 
-# Instala paquetes en el sistema operativo
-RUN apt update && apt full-upgrade --yes && apt install --yes \
-    build-essential \
-    fd-find \
-    ripgrep \
-    snapd \
-    universal-ctags \
-    wget \
-        && \
-    apt clean
-
 # Install Nix package manager
 ENV PATH="/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
 RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \

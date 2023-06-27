@@ -36,8 +36,8 @@ test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command neofetch --version | grep "Neofetch 7"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command nvim --version | grep "NVIM v0.9"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command pip --version | grep "pip 23"
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command rg --version | grep "ripgrep 13"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command rich --version | grep "^1"
-	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command ripgrep --version
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command shellcheck --version | grep "version: 0"
 	apt-cache policy universal-ctags | grep "Installed: 5"
 

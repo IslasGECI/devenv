@@ -21,8 +21,13 @@
       pytest
       rope
     ]))
-    (rWrapper.override{packages = with rPackages; [ languageserver ];})
-    (with nodePackages; [ npm pyright ])
+    (rWrapper.override{packages = with rPackages; [
+      languageserver
+    ];})
+    (with nodePackages; [
+      npm
+      pyright
+    ])
     fd
     mutmut
     neofetch

@@ -25,7 +25,7 @@ test_language_server_protocol:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command python --version | grep "Python 3.10"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command R --version | grep "version 4"
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command Rscript -e "packageVersion('languageserver')" | egrep "0\.[0-9]+\.[0-9]+"
-	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command unzip --version | grep "UnZip 6"
+	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command unzip -v | grep "UnZip 6"
 
 test_os_packages:
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && nix develop --command ctags --version | grep "Ctags 6"

@@ -7,7 +7,7 @@ RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
 RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
     cp /root/pde/flake.nix /workdir/flake.nix
 RUN . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
-    nix develop --command node --version | grep "v20"
+    nix develop --command nvim --version
 
 # Install Neovim configuration
 RUN mkdir --parents /root/.config && \

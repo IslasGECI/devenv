@@ -18,7 +18,7 @@ test_docker_installed_versions:
 	apt-cache policy universal-ctags | grep "Installed: 5"
 	apt-cache policy wget | grep "Installed: 1"
 	node --version | grep "v18"
-	npm --version | grep "^8"
+	npm --version | grep "^9"
 	nvim --version | grep "NVIM v0.9"
 	pip freeze | grep rope==1
 	pyright --version | grep "pyright 1"

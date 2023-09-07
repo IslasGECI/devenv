@@ -4,6 +4,7 @@ FROM islasgeci/base:latest
 RUN apt update && apt full-upgrade --yes && apt install --yes \
     fd-find \
     pip \
+    python3-venv \
     ripgrep \
     universal-ctags \
     wget \

@@ -1,14 +1,5 @@
 FROM islasgeci/base:latest
 
-# Install Nix package manager
-ENV PATH="/root/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
-RUN curl -L https://nixos.org/nix/install | sh -s -- --daemon && \
-    echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
-RUN git clone https://github.com/IslasGECI/pde.git /root/pde && \
-    cp /root/pde/flake.nix /workdir/flake.nix
-RUN . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
-    nix develop --command nvim --version
-
 # Instala paquetes en el sistema operativo
 RUN apt update && apt full-upgrade --yes && apt install --yes \
     fd-find \

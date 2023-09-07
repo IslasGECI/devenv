@@ -11,6 +11,7 @@ SHELL := /bin/bash
 test_docker_installed_versions:
 	Rscript -e "packageVersion('languageserver')" | egrep "0\.[0-9]+\.[0-9]+"
 	apt-cache policy fd-find | grep "Installed: 8"
+	apt-cache policy python3-venv | grep "Installed: 3.10"
 	apt-cache policy ripgrep | grep "Installed: 13"
 	apt-cache policy universal-ctags | grep "Installed: 5"
 	apt-cache policy wget | grep "Installed: 1"

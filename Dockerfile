@@ -39,7 +39,7 @@ RUN wget --directory-prefix="/root" https://github.com/neovim/neovim/releases/do
     ln -s /root/squashfs-root/AppRun /usr/bin/nvim
 
 # Setup Neovim kickstart configuration
+COPY dotfiles/. /root
 RUN mkdir --parents /root/.config && \
     git clone https://github.com/nvim-lua/kickstart.nvim.git /root/.config/nvim && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
-RUN cp --force --recursive /root/pde/dotfiles/. /root

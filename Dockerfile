@@ -42,4 +42,8 @@ RUN wget --directory-prefix="/root" https://github.com/neovim/neovim/releases/do
 RUN mkdir --parents /root/.config && \
     git clone https://github.com/nvim-lua/kickstart.nvim.git /root/.config/nvim && \
     echo 'require("vimrc")' >> /root/.config/nvim/init.lua
+
+# Download Copilot plugin
+RUN git clone https://github.com/github/copilot.vim.git /root/.config/nvim/pack/github/start/copilot.vim
+
 COPY dotfiles/. /root/
